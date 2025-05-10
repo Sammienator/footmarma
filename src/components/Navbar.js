@@ -61,18 +61,18 @@ function Navbar() {
       className={`fixed w-full top-0 z-20 transition-all duration-300 ${
         scrolled 
           ? 'bg-custom-black/95 shadow-lg py-2' 
-          : 'bg-custom-black py-4'
+          : 'bg-custom-black py-3 sm:py-4'
       }`} 
       data-aos="fade-down"
     >
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-4 navbar-container">
+      <div className="max-w-5xl mx-auto flex justify-between items-center px-4 sm:px-6 navbar-container">
         <a href="#home" className="flex items-center group" onClick={() => handleNavClick('home')}>
           <img 
             src={logo} 
             alt="Foot Marma Logo" 
-            className="h-12 mr-2 transition-transform duration-300 group-hover:scale-105" 
+            className="h-10 sm:h-12 mr-2 transition-transform duration-300 group-hover:scale-105" 
           />
-          <span className="text-xl font-bold text-white">
+          <span className="text-lg sm:text-xl font-bold text-white">
             <span className="font-normal">foot</span>
             <span className="text-custom-silver"> MARMA</span>
           </span>
@@ -81,11 +81,11 @@ function Navbar() {
         {/* Mobile menu button */}
         <button 
           onClick={() => setIsOpen(!isOpen)} 
-          className="md:hidden text-white focus:outline-none"
+          className="md:hidden text-white focus:outline-none focus:ring-2 focus:ring-custom-silver/50 rounded"
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path 
               strokeLinecap="round" 
               strokeLinejoin="round" 
@@ -95,10 +95,10 @@ function Navbar() {
           </svg>
         </button>
 
-        {/* Desktop Navigation */}
+        {/* Navigation */}
         <div className={`md:flex items-center md:space-x-8 ${
           isOpen 
-            ? 'absolute top-full left-0 w-full bg-custom-black/95 shadow-lg py-4 space-y-3 flex flex-col' 
+            ? 'fixed top-14 left-0 w-full h-[calc(100vh-56px)] bg-custom-black/95 flex flex-col items-center justify-center space-y-4 py-6'
             : 'hidden md:flex'
         }`}>
           {navLinks.map(link => (
@@ -106,7 +106,7 @@ function Navbar() {
               key={link.id}
               href={`#${link.id}`} 
               onClick={() => handleNavClick(link.id)}
-              className={`relative px-2 py-1 text-center transition-colors duration-300 ${
+              className={`relative px-4 py-2 text-center text-base sm:text-lg transition-colors duration-300 ${
                 activeSection === link.id 
                   ? 'text-custom-silver font-medium' 
                   : 'text-white hover:text-custom-silver'
@@ -120,7 +120,7 @@ function Navbar() {
           ))}
           <a 
             href="#contact" 
-            className="mt-3 md:mt-0 px-5 py-2 bg-custom-silver text-custom-black rounded-full font-medium transition-all duration-300 hover:bg-white hover:shadow-md text-center"
+            className="mt-4 md:mt-0 px-6 py-2 bg-custom-silver text-custom-black rounded-full font-medium text-base sm:text-lg transition-all duration-300 hover:bg-white hover:shadow-md text-center"
           >
             Book Now
           </a>
