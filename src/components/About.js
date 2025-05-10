@@ -117,23 +117,31 @@ function About() {
             relaxation and balance.
           </p>
           
-          <div className="bg-custom-silver/5 rounded-xl border border-custom-silver/10 p-4 md:p-6 shadow-lg backdrop-blur-sm">
-            <div className="grid grid-cols-7 gap-2 font-bold text-custom-silver mb-3 px-3 py-4 border-b border-custom-silver/10">
+          <div className="bg-custom-silver/5 rounded-xl border border-custom-silver/10 p-3 sm:p-6 shadow-lg backdrop-blur-sm">
+            {/* Table Header */}
+            <div className="hidden sm:grid sm:grid-cols-7 gap-2 font-bold text-custom-silver mb-3 px-3 py-4 border-b border-custom-silver/10">
               <div className="col-span-3">Aspect</div>
               <div className="col-span-2">Massage</div>
               <div className="col-span-2">Reflexology</div>
             </div>
             
+            {/* Table Rows */}
             {differences.map((diff, idx) => (
               <div 
                 key={idx} 
-                className={`grid grid-cols-7 gap-2 px-3 py-4 text-white ${idx !== differences.length - 1 ? 'border-b border-custom-silver/10' : ''}`}
+                className={`flex flex-col sm:grid sm:grid-cols-7 gap-2 px-3 py-3 sm:py-4 text-white ${idx !== differences.length - 1 ? 'border-b border-custom-silver/10' : ''}`}
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
               >
-                <div className="col-span-3 font-medium text-custom-silver">{diff.title}</div>
-                <div className="col-span-2">{diff.massage}</div>
-                <div className="col-span-2">{diff.reflexology}</div>
+                <div className="col-span-3 font-medium text-custom-silver sm:text-base text-sm">
+                  <span className="sm:hidden font-bold">Aspect: </span>{diff.title}
+                </div>
+                <div className="col-span-2 sm:text-base text-sm">
+                  <span className="sm:hidden font-bold">Massage: </span>{diff.massage}
+                </div>
+                <div className="col-span-2 sm:text-base text-sm">
+                  <span className="sm:hidden font-bold">Reflexology: </span>{diff.reflexology}
+                </div>
               </div>
             ))}
           </div>

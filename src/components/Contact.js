@@ -109,12 +109,10 @@ function Contact() {
               <div className="bg-custom-silver bg-opacity-10 p-5 rounded-xl shadow-lg">
                 <h3 className="text-2xl font-semibold text-custom-silver mb-3">Opening Hours</h3>
                 <div className="grid grid-cols-2 gap-2 text-custom-silver">
-                  <div>Monday - Friday:</div>
-                  <div>9:00 AM - 7:00 PM</div>
-                  <div>Saturday:</div>
-                  <div>9:00 AM - 6:00 PM</div>
+                  <div>Monday - Saturday:</div>
+                  <div>10:00 AM - 08:00 PM</div>
                   <div>Sunday:</div>
-                  <div>10:00 AM - 5:00 PM</div>
+                  <div>11:00 AM - 04:00 PM</div>
                 </div>
               </div>
             </div>
