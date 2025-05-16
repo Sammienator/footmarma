@@ -84,9 +84,18 @@ function Contact() {
   return (
     <section id="contact" className="py-20 bg-gradient-to-b from-gray-900 to-black" data-aos="fade-up">
       <div className="max-w-6xl mx-auto px-4">
+
+
+      <h1 className="text-3xl md:text-5xl text-center font-bold text-white p-4 m-4 "> Schedule Your Appointment With Us..</h1>
+
         <div className="flex flex-col lg:flex-row">
+
+        
+
           {/* Info Panel */}
           <div className="lg:w-2/5 mb-10 lg:mb-0 lg:pr-12" data-aos="fade-right">
+
+           
             <h2 className="text-4xl md:text-5xl font-bold text-custom-silver mb-6">Book Your Relaxation Journey</h2>
             
             <p className="text-custom-silver mb-8 text-lg">

@@ -168,7 +168,7 @@ function About() {
         </div>
         
         {/* Testimonials with enhanced presentation */}
-        <div className="mb-20" data-aos="fade-up">
+        <div id='testimonials' className="mb-20" data-aos="fade-up">
           <div className="flex items-center justify-center mb-12">
             <span className="w-8 h-0.5 bg-custom-silver/50 mr-3 hidden md:block"></span>
             <h3 className="text-2xl md:text-3xl font-bold text-custom-silver">What Our Clients Say</h3>

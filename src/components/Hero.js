@@ -12,6 +12,7 @@ function Hero() {
   
   const [currentImage, setCurrentImage] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   const intervalRef = useRef(null);
   const slideDuration = 8000; // 8 seconds per slide
   const transitionDuration = 1000; // 1 second transition
@@ -127,28 +128,41 @@ function Hero() {
         ))}
       </div>
 
-      {/* Content card */}
+      {/* Modern floating content card with hover effect */}
       <div 
         className="relative z-10 text-center max-w-4xl mx-6"
         data-aos="zoom-in" 
         data-aos-delay="300"
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
       >
-        <div className="bg-custom-silver/95 p-6 md:p-12 rounded-xl border-2 border-custom-black shadow-2xl backdrop-blur-sm">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-custom-black">
-            Welcome to <span className="relative inline-block">
+        <div 
+          className={`p-6 md:p-12 rounded-xl backdrop-blur-md transition-all duration-500 
+            ${isHovering 
+              ? 'bg-custom-silver/95 border-2 border-custom-black shadow-2xl' 
+              : 'bg-transparent border border-custom-silver/30 shadow-lg'}`}
+        >
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4 transition-colors duration-500 
+            text-custom-silver hover:text-custom-black">
+            <span className="relative inline-block group">
               Foot Marma
-              <span className="absolute -bottom-1 left-0 w-full h-1 bg-custom-black/30 rounded-full"></span>
+              <span className={`absolute -bottom-1 left-0 w-full h-1 rounded-full transition-all duration-500 
+                ${isHovering ? 'bg-custom-black/80' : 'bg-custom-silver/60'}`}></span>
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-custom-black/90 font-medium max-w-2xl mx-auto">
+          <p className={`text-xl md:text-2xl mb-8 font-medium max-w-2xl mx-auto transition-colors duration-500
+            ${isHovering ? 'text-custom-black/90' : 'text-custom-silver'}`}>
             Discover holistic healing through expert reflexology and restore your body's natural balance.
           </p>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="#contact" 
-              className="group bg-custom-black text-custom-silver px-6 py-3 md:px-8 md:py-4 rounded-lg shadow-lg hover:bg-custom-silver hover:text-custom-black border-2 border-custom-black transition-all duration-300 flex items-center justify-center"
+              className={`group px-6 py-3 md:px-8 md:py-4 rounded-lg shadow-lg transition-all duration-300 flex items-center justify-center
+                ${isHovering 
+                  ? 'bg-custom-black text-custom-silver hover:bg-custom-silver hover:text-custom-black border-2 border-custom-black' 
+                  : 'bg-custom-silver/20 text-custom-silver hover:bg-custom-silver/30 border border-custom-silver/50'}`}
             >
               <span>Book Your Session</span>
               <svg 
@@ -164,7 +178,10 @@ function Hero() {
             
             <a 
               href="#services" 
-              className="group bg-transparent border-2 border-custom-black text-custom-black px-6 py-3 md:px-8 md:py-4 rounded-lg hover:bg-custom-black hover:text-custom-silver transition-all duration-300 flex items-center justify-center"
+              className={`group px-6 py-3 md:px-8 md:py-4 rounded-lg transition-all duration-300 flex items-center justify-center
+                ${isHovering 
+                  ? 'bg-transparent border-2 border-custom-black text-custom-black hover:bg-custom-black hover:text-custom-silver' 
+                  : 'bg-transparent border border-custom-silver/50 text-custom-silver hover:bg-custom-silver/20'}`}
             >
               <span>Explore Services</span>
               <svg 
@@ -181,9 +198,11 @@ function Hero() {
         </div>
       </div>
 
-      {/* Decorative elements */}
-      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-custom-silver/20 rounded-full blur-3xl"></div>
-      <div className="absolute -top-16 -right-16 w-32 h-32 bg-custom-silver/20 rounded-full blur-3xl"></div>
+      {/* Enhanced decorative elements */}
+      <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-custom-silver/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute -top-16 -right-16 w-32 h-32 bg-custom-silver/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-1/4 right-1/4 w-24 h-24 bg-custom-silver/10 rounded-full blur-2xl"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-24 h-24 bg-custom-silver/10 rounded-full blur-2xl"></div>
     </section>
   );
 }
