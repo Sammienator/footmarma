@@ -159,7 +159,7 @@ function Hero() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a 
               href="#contact" 
-              className={`group px-6 py-3 md:px-8 md:py-4 rounded-lg shadow-lg transition-all duration-300 flex items-center justify-center
+              className={`group px-6 py-3 md:px-8 md:py-4 rounded-lg shadow-lg rounded-lg  transition-all duration-300 flex items-center justify-center
                 ${isHovering 
                   ? 'bg-custom-black text-custom-silver hover:bg-custom-silver hover:text-custom-black border-2 border-custom-black' 
                   : 'bg-custom-silver/20 text-custom-silver hover:bg-custom-silver/30 border border-custom-silver/50'}`}

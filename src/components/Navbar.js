@@ -120,7 +120,7 @@ function Navbar() {
           ))}
           <a 
             href="#contact" 
-            className="mt-4 md:mt-0 px-6 py-2 bg-custom-silver text-custom-black rounded-full font-medium text-base sm:text-lg transition-all duration-300 hover:bg-white hover:shadow-md text-center"
+            className="mt-4 md:mt-0 px-6 py-2 inline-block rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-custom-black rounded-full font-medium text-base sm:text-lg transition-all duration-300 hover:bg-white hover:shadow-md text-center"
           >
             Book Now
           </a>

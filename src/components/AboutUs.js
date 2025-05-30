@@ -15,7 +15,7 @@ function AboutUs() {
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             About <span className="text-custom-silver">foot MARMA</span>
           </h2>
-          <div className="w-24 h-1 bg-custom-silver mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-500 mx-auto mt-4 rounded-full"></div>
         </div>
         
         {/* Our Journey Section */}
